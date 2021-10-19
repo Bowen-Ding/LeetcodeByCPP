@@ -33,11 +33,10 @@ using namespace std;
 class Solution {
 public:
     int findComplement(int num) {
-        int i = 0;
-        while (num < 2^i || num >= 2^(i+1)) {
-            ++i;
+        int x = 0;
+        for (int i = num; i != 0; i -= i & -i) {
+            x = i;
         }
-        int tmp = 2^(i + 1) - 1;
-        return num ^ tmp;
+        return ~num & (x - 1);
     }
 };
