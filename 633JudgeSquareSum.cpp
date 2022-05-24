@@ -28,7 +28,7 @@ public:
             long num = left * left + right * right;
             if (c == num) {
                 return true;
-            } else if (c > num) {
+            } else if (c < num) {
                 ++left;
             } else {
                 --right;
